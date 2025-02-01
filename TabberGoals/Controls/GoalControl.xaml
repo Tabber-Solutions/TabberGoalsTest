@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="TabberGoals.Controls.GoalControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TabberGoals.Controls"
+             mc:Ignorable="d" Height="205" Width="330" MinHeight="205" MinWidth="330" MaxHeight="205" MaxWidth="330" SnapsToDevicePixels="True">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Content-->
+        <Grid Grid.Row="0" Panel.ZIndex="3" Margin="20,15,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Title-->
+            <StackPanel Grid.Row="0" Orientation="Vertical" FlowDirection="LeftToRight">
+                <Label Name="labelTitle" FontSize="{DynamicResource Heading3}" Padding="0">Title</Label>
+                 <Separator Opacity="0"/>
+                <Label Name="labelTargets" FontSize="{DynamicResource Paragraph1}" Foreground="{DynamicResource Paragraph}" Padding="0">0 Targets</Label>
+            </StackPanel>
+
+            <!--Buttons-->
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25"/>
+                <Separator Opacity="0" Width="2"/>
+                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25"/>
+            </StackPanel>
+
+            <!--Status-->
+            <StackPanel Grid.Row="1" Grid.ColumnSpan ="2" Orientation="Vertical" FlowDirection="LeftToRight" VerticalAlignment="Center">
+                <Label FontSize="{DynamicResource Paragraph1}" Padding="0" Margin="0,15,0,0">Status</Label>
+                <Separator Opacity="0"/>
+                <ProgressBar Name="progressBarStatus" Style="{StaticResource TabberProgressBarDefaultStyle}" Height="20"></ProgressBar>
+            </StackPanel>
+
+            <!--Date-->
+            <StackPanel Grid.Row="2" Orientation="Vertical" FlowDirection="LeftToRight" VerticalAlignment="Bottom">
+                <Label FontSize="{DynamicResource Paragraph1}" Padding="0" Margin="0,15,0,0">Date Achieved</Label>
+                <Separator Opacity="0"/>
+                <DatePicker Name="datePickerDateAchieved" Template="{StaticResource TabberDatePickerDefaultStyle}"></DatePicker>
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+        
+        <!--Borders-->
+        <Border Style="{StaticResource TabberBorderStyle2}" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan ="2" Panel.ZIndex="2"/>
+        <Border Style="{StaticResource TabberBorderStyle0}" Grid.Row="0" Grid.RowSpan="2" Margin="5,0,5,0" Grid.ColumnSpan ="2" Panel.ZIndex="1"/>
+        <Border Style="{StaticResource TabberBorderStyle0}" Grid.Row="0" Grid.RowSpan="3" Margin="10,0,10,0" Grid.ColumnSpan ="2" Panel.ZIndex="0"/>
+        
+    </Grid>
+</UserControl>

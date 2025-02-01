@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:TabberGoals"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="TabberUI/Colours.xaml"/>
+                <ResourceDictionary Source="TabberUI/Sizes.xaml"/>
+                <ResourceDictionary Source="TabberUI/Fonts.xaml"/>
+                
+                <ResourceDictionary Source="TabberUI/Styles/TabberDatePicker/TabberDatePickerStyles.xaml"/>
+                <ResourceDictionary Source="TabberUI/Styles/TabberButton/TabberButtonStyles.xaml"/>
+                <ResourceDictionary Source="TabberUI/Styles/TabberBorder/TabberBorderStyles.xaml"/>
+                <ResourceDictionary Source="TabberUI/Styles/TabberTextBox/TabberTextBoxStyles.xaml"/>
+                <ResourceDictionary Source="TabberUI/Styles/TabberProgressBar/TabberProgressBarStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
