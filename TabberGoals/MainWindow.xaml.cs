@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TabberGoals.Controls;
+using TabberGoals.Database.DataLogic;
 
 namespace TabberGoals
 {
@@ -20,16 +21,6 @@ namespace TabberGoals
         public MainWindow()
         {
             InitializeComponent();
-
-            GoalControl goalControl = new GoalControl();
-            goalControl.Title = "Test";
-            goalControl.Targets = 2;
-            goalControl.Status = 73.8;
-            goalControl.DateAchieved = DateTime.Today;
-
-            Grid.Children.Add(goalControl);
-
-            MessageBox.Show(goalControl.Targets.ToString());
         }
     }
 }

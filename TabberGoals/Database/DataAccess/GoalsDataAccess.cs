@@ -15,7 +15,7 @@ namespace TabberGoals.Database.DataAccess
         /// <summary>
         /// The connection string to the tabber goals database - needs to be a string read from a file such as reading a string from a .txt file
         /// </summary>
-        public SqlConnection connectionString = null;
+        public SqlConnection connectionString = new SqlConnection("Server=tcp:tabber.database.windows.net,1433;Initial Catalog=TabberGoals;Persist Security Info=False;User ID=tabberadmin;Password=Tabber.co.uk;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
 
         /// <summary>

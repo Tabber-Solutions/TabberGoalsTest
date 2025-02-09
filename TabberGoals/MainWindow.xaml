@@ -5,10 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TabberGoals"
         xmlns:controls="clr-namespace:TabberGoals.Controls"
+        xmlns:tabberUI="clr-namespace:Tabber_Goals.TabberUI.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid Name="Grid" Background="{DynamicResource Background1}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="175"/>
+        </Grid.ColumnDefinitions>
+       
         
     </Grid>
+    
+    
 </Window>

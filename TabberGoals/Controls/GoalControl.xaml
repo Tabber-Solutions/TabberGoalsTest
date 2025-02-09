@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TabberGoals.Controls"
-             mc:Ignorable="d" Height="205" Width="330" MinHeight="205" MinWidth="330" MaxHeight="205" MaxWidth="330" SnapsToDevicePixels="True">
+             mc:Ignorable="d" Height="205" Width="330" MinHeight="205" MinWidth="330" MaxHeight="205" MaxWidth="330"
+             Margin="5,5,5,5"
+             SnapsToDevicePixels="True">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -28,30 +30,49 @@
 
             <!--Title-->
             <StackPanel Grid.Row="0" Orientation="Vertical" FlowDirection="LeftToRight">
-                <Label Name="labelTitle" FontSize="{DynamicResource Heading3}" Padding="0">Title</Label>
+                <Label Name="textBoxTitle" FontSize="{DynamicResource Heading3}" Padding="0">Title</Label>
                  <Separator Opacity="0"/>
                 <Label Name="labelTargets" FontSize="{DynamicResource Paragraph1}" Foreground="{DynamicResource Paragraph}" Padding="0">0 Targets</Label>
             </StackPanel>
 
             <!--Buttons-->
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25"/>
-                <Separator Opacity="0" Width="2"/>
-                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25"/>
+                
+                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25">
+                    <Image Source="/Assets/DeleteUnselected-96px.png"/>
+                </Button>
+                
+                <Separator Opacity="0" Width="10"/>
+                
+                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25">
+                    <Image Source="/Assets/HierarchyUnselected-96px.png"/>
+                </Button>
+
+                <Separator Opacity="0" Width="10"/>
+                
+                <Button Style="{StaticResource TabberButtonDefaultStyle}" Width="25" Height="25">
+                    <Image Source="/Assets/EditUnselected-30px.png"/>
+                </Button>
+
             </StackPanel>
 
             <!--Status-->
             <StackPanel Grid.Row="1" Grid.ColumnSpan ="2" Orientation="Vertical" FlowDirection="LeftToRight" VerticalAlignment="Center">
                 <Label FontSize="{DynamicResource Paragraph1}" Padding="0" Margin="0,15,0,0">Status</Label>
                 <Separator Opacity="0"/>
-                <ProgressBar Name="progressBarStatus" Style="{StaticResource TabberProgressBarDefaultStyle}" Height="20"></ProgressBar>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan ="2" Orientation="Horizontal" FlowDirection="LeftToRight" VerticalAlignment="Center">
+                    <ProgressBar Name="progressBarStatus" Style="{StaticResource TabberProgressBarDefaultStyle}" Height="20" Width="250"></ProgressBar>
+                    <Label FontSize="{DynamicResource Paragraph1}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource Paragraph}" Name="progressTextBox" Width="40" Padding="0">0%</Label>
+                </StackPanel>
+                
             </StackPanel>
 
             <!--Date-->
             <StackPanel Grid.Row="2" Orientation="Vertical" FlowDirection="LeftToRight" VerticalAlignment="Bottom">
                 <Label FontSize="{DynamicResource Paragraph1}" Padding="0" Margin="0,15,0,0">Date Achieved</Label>
                 <Separator Opacity="0"/>
-                <DatePicker Name="datePickerDateAchieved" Template="{StaticResource TabberDatePickerDefaultStyle}"></DatePicker>
+                <Label FontSize="{DynamicResource Paragraph1}" Foreground="{DynamicResource Paragraph}" Name="labelDateAchieved" Padding="0">09/02/2025</Label>
             </StackPanel>
         </Grid>
         <!--#endregion-->

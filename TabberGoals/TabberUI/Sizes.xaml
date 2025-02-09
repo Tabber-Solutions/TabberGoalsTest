@@ -3,7 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=netstandard">
     
     <Thickness x:Key="BorderThicknessNone">0</Thickness>
-    <Thickness x:Key="BorderThicknessDefault">1</Thickness>
+    <Thickness x:Key="BorderThicknessDefault">0</Thickness>
     <CornerRadius x:Key="CornerRadius">5</CornerRadius>
     
 </ResourceDictionary>

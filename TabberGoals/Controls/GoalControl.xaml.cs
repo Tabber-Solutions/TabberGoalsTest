@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,43 +26,84 @@ namespace TabberGoals.Controls
         /// <summary>
         /// The title of the goal
         /// </summary>
-        public string? Title
-        {
-            get { return labelTitle.Content.ToString(); }
-            set { labelTitle.Content = value; }
-        }
+        public string? Title { get; private set; }
 
         /// <summary>
         /// The number of targets that the goal contains
         /// </summary>
-        public int? Targets
-        {
-            get { var digits = new string(labelTargets.Content.ToString().Where(char.IsDigit).ToArray()); return int.Parse(digits); }
-            set { labelTargets.Content = $"{value} Targets"; }
-        }
+        public int? Targets {  get; private set; }
 
         /// <summary>
         /// The progress of the goal 
         /// </summary>
-        public double Status
-        {
-            get { return progressBarStatus.Value; }
-            set {progressBarStatus.Value = value;}
-        }
+        public double Status { get; private set; }
 
         /// <summary>
         /// The date that the goal was achieved
         /// </summary>
-        public DateTime? DateAchieved
-        {
-            get { return (DateTime)datePickerDateAchieved.SelectedDate; }
-            set { datePickerDateAchieved.SelectedDate = value; }
-        }
+        public DateTime? DateAchieved { get; private set; }
         #endregion
 
         public GoalControl()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Set title property
+        /// </summary>
+        /// <param name="title">The title of the goal</param>
+        public void SetTitle(string title)
+        {
+            try
+            {
+                //If title is null then mnake it default
+                if(string.IsNullOrEmpty(title))
+                {
+                    title = "Goal Title";
+                }
+
+                //Set value of title property
+                Title = title;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"{ex}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Set status property
+        /// </summary>
+        /// <param name="status">The status of the goal</param>
+        public void SetStatus(int status)
+        {
+            try
+            {
+                //Set value of status property
+                Status = status;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Set date achieved property
+        /// </summary>
+        /// <param name="dateAchieved">The date the goal was achieved</param>
+        public void SetDateAchieved(DateTime dateAchieved)
+        {
+            try
+            {
+                //Set value of date achieved property
+                DateAchieved = dateAchieved;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

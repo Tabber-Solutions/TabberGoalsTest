@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Tabber_Goals.TabberUI.Controls
+namespace TabberGoals.TabberUI.Controls
 {
     public partial class TabberWrapPanel : WrapPanel
     {
